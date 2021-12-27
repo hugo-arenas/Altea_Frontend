@@ -1,12 +1,10 @@
 import React, {FC} from "react";
 import {View, Text, StyleSheet} from "react-native";
-import Input from './components/input';
 
 const App:FC = () => {
     return (
         <View style={styles.container}>
-            <Text>Login Screen</Text>
-            <Input placeholder="Name" onChangeText={(text)=>console.log(text)}/>
+            <Text>Sign Up Screen</Text>
             </View>
     )
 }
