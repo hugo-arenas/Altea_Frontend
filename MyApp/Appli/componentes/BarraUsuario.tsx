@@ -4,8 +4,7 @@ import { Image, StyleSheet, Text, View,} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import vistaVacia from '../screens/vistaVacia';
-import Login from '../screens/Login'
-import VistaPerfil from '../screens/VistaPerfil';
+import VistaPerfilUsuario from '../screens/VistaPerfilUsuario';
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -36,7 +35,7 @@ function MyTabs() {
           ),
           headerShown: true, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
-      <Tab.Screen name="perfil" component={VistaPerfil} options={{
+      <Tab.Screen name="perfil" component={VistaPerfilUsuario} options={{
           tabBarIcon: ({focused}) =>(
               <View style={{alignItems:'center', justifyContent: 'center'}}>
                   <Image source={require('@recursos/images/user.png')}
