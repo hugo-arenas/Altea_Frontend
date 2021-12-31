@@ -13,6 +13,32 @@ import {
 
 export default function LoginScreen(){
 
+    const [correo,setCorreo]=useState('');
+    const [contra,setContra]=useState('');
+
+    const [usuarioTxt, setUsuarioTxt] = useState('');
+    const [usuario, setUsuario] = useState([]);
+
+    const Inicio = async () => {
+        console.log(correo)
+        console.log(contra)
+        const encodedCorreo = encodeURIComponent(correo);
+        const encodedContra=encodeURIComponent(contra);
+        const res = await fetch(`http://10.0.2.2:8080/usuarios/${encodedCorreo}/${encodedContra}`)
+        const data = await res.text()
+        setUsuarioTxt(data)
+        
+        if(usuarioTxt != ''){
+            setUsuario(JSON.parse(usuarioTxt))
+            console.log(usuario)
+            console.log(usuario.nombre)
+            return Alert.alert('Bienvenido ' + usuario.nombre +' '+ usuario.apellido)
+        }
+        else{
+            return Alert.alert('Datos erroneos')
+        }
+    }
+
     return(
         <GradientBackground>
         <View style={[mainStyles.container, {padding: 50}]}>
@@ -21,10 +47,11 @@ export default function LoginScreen(){
                 style={{ height:250, width:250}}/>    
             </View>
             <Text style = {mainStyles.titleText}>Inicio de sesión</Text>
-            <TextInput style= {styles.input}  placeholder='E-mail'/>
+            <TextInput style= {styles.input} placeholder='E-mail' onChangeText={correo => setCorreo(correo)} defaultValue={correo}/>
             
-            <TextInput style= {styles.input} placeholder='Contraseña'/>
-            <TouchableOpacity style={TamBtn.tamanio} onPress={() => Alert.alert('Inicio sesión')}>  
+            <TextInput style= {styles.input} placeholder='Contraseña'onChangeText={contra => setContra(contra)} defaultValue={contra}/>
+            
+            <TouchableOpacity style={TamBtn.tamanio} onPress={() => Inicio()}>  
                 <Text style={Txtformat.tamanio} >Iniciar sesión</Text>
             </TouchableOpacity>
             

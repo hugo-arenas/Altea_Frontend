@@ -9,10 +9,6 @@ const Prueba = () => {
         setPatologias(data)
     }
 
-    useEffect(() => {
-        loadTasks()
-    },[])
-    
     return (
         <View>
             <FlatList
@@ -23,7 +19,7 @@ const Prueba = () => {
                 }}
             />
             <TouchableOpacity
-                onPress={() => Alert.alert('Hello, world!')}
+                onPress={() => loadTasks()}
                 style={{ backgroundColor: 'blue' }}>
                 <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
             </TouchableOpacity>
