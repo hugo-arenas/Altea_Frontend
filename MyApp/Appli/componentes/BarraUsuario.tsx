@@ -57,7 +57,12 @@ function MyTabs() {
                   style={{ height:30, width:30}}/>
               </View>
           ),
-          headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
+          headerStyle: {
+            backgroundColor: '#D49AED',
+          },
+          headerTitle: (props)  => <LogoTitle {...props} />,
+
+          headerShown: true, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
       <Tab.Screen name="Chatbot"component={vistaVacia} options={{
           tabBarIcon: ({focused}) =>(

@@ -40,6 +40,11 @@ const VistaPerfil = () => {
                 <Text style={Txtformat.tamanioTitulos}>Correo empresarial   <Text style={Txtformat.tamanioInfo}>{empresa.correo}</Text> </Text>
             </View>
 
+            <TouchableOpacity >
+                <Image source={require('@recursos/images/estadisticasLogo.png')}
+                    style={styleImage.imageRecomendaciones}/>
+            </TouchableOpacity>
+
         </View>
         </GradientBackground>
     )
@@ -105,8 +110,8 @@ const mainStyles = StyleSheet.create({
 
 const TamBtn = StyleSheet.create({
     tamanio: {
-        height: 40, 
-        width: 200, 
+        height: 60, 
+        width: 60, 
         marginTop: 5, 
         backgroundColor: '#060544',
         borderTopLeftRadius: 50,
@@ -155,4 +160,18 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 50,
         marginBottom: 15
     },
+  });
+
+
+  const styleImage = StyleSheet.create({
+    imageRecomendaciones: {
+        height:80, 
+        width:80, 
+        marginRight: 10, resizeMode: 'stretch',
+        display:"flex",
+        borderTopLeftRadius: 100,
+        borderTopRightRadius: 100,
+        borderBottomRightRadius: 100,
+        borderBottomLeftRadius: 100,
+    }
   });

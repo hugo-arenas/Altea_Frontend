@@ -1,31 +1,98 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { StackScreenProps } from '@react-navigation/stack';
 import React/*, {useEffect, useState} */from 'react'
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
 import { GradientBackground } from '../componentes/GradientBackground';
-//import * as Font from 'expo-font'
+import {StackNavigator} from '../componentes/StackNavigator';
 
 
-const principalScreen = () => {
-    /*const [fontsLoaded, setFontsLoaded] = useState(false);
+interface Props extends StackScreenProps<any,any>{};
 
-    useEffect(() => {
-        if(!fontsLoaded){
-            Font.loadAsync({
-                'roboto-medium': require('@recursos/fonts/Roboto-Medium.ttf')
-            });
-
-        }
-    });*/
+const principalScreen = ({navigation}: Props) => {
+   
+    
     return (
         <GradientBackground>
             <Text style = {mainStyles.titleText}>Noticias</Text>
             <ScrollView contentContainerStyle={styles.contentContainer} horizontal={true}>
-            <Image source={require('@recursos/images/noticiaUno.png')}
-                    style={{ height:250, width:250}}/>  
-            
-            <Image source={require('@recursos/images/noticiaDos.png')}
-                    style={{ height:250, width:250}}/>  
+
+                <TouchableOpacity >
+                <Image source={require('@recursos/images/noticiaUno.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaDos.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaTres.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaCuatro.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaCinco.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaSeis.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaSiete.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
 
             </ScrollView>
+                        
+            
+
+            <Text style = {mainStyles.titleText}>Recomendaciones</Text>
+            <ScrollView contentContainerStyle={styles.contentContainer} horizontal={true}>
+            <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaUno.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+              
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaDos.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaTres.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaCuatro.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaCinco.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaSeis.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+
+                <TouchableOpacity>
+                <Image source={require('@recursos/images/noticiaSiete.png')}
+                    style={styleImage.imageRecomendaciones}/>
+                </TouchableOpacity>
+            </ScrollView>
+
         </GradientBackground>
     )
     
@@ -56,6 +123,14 @@ const mainStyles = StyleSheet.create({
         fontWeight: 'bold',
     },
 
+    descriptionText: {
+        fontSize: 15,
+        marginTop: 130,
+        marginBottom: 15,
+        fontFamily: "Poppins-SemiBold",
+        color: '#FFFF',
+        fontWeight: 'bold',
+    },
     btnMain: {
         width: 280,
         marginTop: 40,
@@ -86,41 +161,25 @@ const mainStyles = StyleSheet.create({
     
 })
 
-const TamBtn = StyleSheet.create({
-    tamanio: {
-        height: 40, 
-        width: 200, 
-        marginTop: 5, 
-        backgroundColor: '#060544',
-        borderTopLeftRadius: 50,
-        borderTopRightRadius: 50,
-        borderBottomRightRadius: 50,
-        borderBottomLeftRadius: 50,
-    },
-
-})
-
-const Txtformat = StyleSheet.create({
-
-    tamanio: {
-        fontSize: 20, 
-        color: '#fff', 
-        textAlign: 'center', 
-        marginTop: 5,
-    }
-})
-
-const loginStyles = StyleSheet.create({
-
-    logo: {
-        paddingTop: 50,
-        alignItems: 'center',
-        marginBottom: 15,
-    },
-})
-
 const styles = StyleSheet.create({
     contentContainer: {
-      paddingVertical: 20
+      maxHeight: 200,
+      backgroundColor: 'rgba(0,0,0,0.05)',
+    }
+  });
+
+  const styleImage = StyleSheet.create({
+    imageRecomendaciones: {
+        height:150, 
+        width:300, 
+        marginRight: 10, resizeMode: 'stretch',
+        display:"flex",
+        borderRadius:3,
+    },
+    imageNoticias: {
+        height:150, 
+        width:300,
+        borderRadius:3,
+        marginRight: 0.5,
     }
   });
