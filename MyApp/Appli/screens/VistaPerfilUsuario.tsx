@@ -44,6 +44,7 @@ const VistaPerfil = () => {
                 <Text style={Txtformat.tamanioTitulos}>Correo       <Text style={Txtformat.tamanioInfo}>{usuarios.correo}</Text> </Text>
             </View>
 
+            
         </View>
         </GradientBackground>
     )
