@@ -1,33 +1,21 @@
-import React from 'react';
-
-import { createStackNavigator } from '@react-navigation/stack';
-import { noticiaScreen } from '../screens/noticiaScreen';
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RegistroScreen from '../screens/RegistroScreen';
 
-export type RootStackParams = {
-    noticiaScreen: { id: number, nombre: string },
-    RegistroScreen: undefined,
-}
+import BarraEmpresa from '../componentes/BarraEmpresa';
 
+const Stack = createNativeStackNavigator();
 
-const Stack = createStackNavigator<RootStackParams>();
-
-export const StackNavigator = () => {
+export default function App() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          elevation: 0,
-          shadowColor: 'transparent'
-        },
-        cardStyle: {
-          backgroundColor: 'white'
-        }
-      }}
-    >
-      
-      <Stack.Screen name="noticiaScreen" component={ noticiaScreen } />
-      <Stack.Screen name="RegistroScreen" component={ RegistroScreen } />
-    </Stack.Navigator>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='BarraEmpresa' component={BarraEmpresa} options={{
+          headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
+      }}/>
+        <Stack.Screen name='Registro' component={RegistroScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
