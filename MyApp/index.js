@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import BarraEmpresa from './Appli/componentes/BarraEmpresa';
+import BarraSuperusuario from './Appli/componentes/BarraSuperusuario';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => BarraEmpresa);
+AppRegistry.registerComponent(appName, () => BarraSuperusuario);
