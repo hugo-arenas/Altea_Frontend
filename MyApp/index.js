@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import BarraSuperusuario from './Appli/componentes/BarraSuperusuario';
+import estadisticasScreen from './Appli/screens/estadisticasScreen';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => BarraSuperusuario);
+AppRegistry.registerComponent(appName, () => estadisticasScreen);

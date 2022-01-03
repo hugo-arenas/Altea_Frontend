@@ -40,6 +40,7 @@ const VistaPerfil = () => {
                 <Text style={Txtformat.tamanioTitulos}>Correo   <Text style={Txtformat.tamanioInfo}>{superusuario.correo}</Text> </Text>
             </View>
 
+            <Text style={{fontSize: 15, color:'white'}}>Clientes</Text>
             <TouchableOpacity >
                 <Image source={require('@recursos/images/clientesLogo.png')}
                     style={styleImage.imageRecomendaciones}/>
