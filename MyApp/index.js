@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import StackNavigator from './Appli/componentes/StackNavigator';
+import BarraUsuario from './Appli/componentes/BarraUsuario';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => StackNavigator);
+AppRegistry.registerComponent(appName, () => BarraUsuario);

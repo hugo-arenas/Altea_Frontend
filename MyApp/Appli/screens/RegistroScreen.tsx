@@ -16,6 +16,8 @@ export default function RegistroScreen() {
                 <TextInput style= {styles.input}  placeholder='Nombre'/>
                 
                 <TextInput style= {styles.input} placeholder='Apellido'/>
+                
+                <TextInput style= {styles.input} placeholder='Edad'/>
 
                 <TextInput style= {styles.input} placeholder='Correo'/>
 

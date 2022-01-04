@@ -14,7 +14,7 @@ const VistaPerfil = () => {
 
     const [usuarios, setUsuaruos] = useState([])
     const loadTasks = async () => {
-        const res = await fetch('http://10.0.2.2:8080/usuarios/1')
+        const res = await fetch('http://10.0.2.2:8080/usuarios/5')
         const data = await res.json()
         console.log(data)
         setUsuaruos(data)
