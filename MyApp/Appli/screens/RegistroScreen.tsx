@@ -30,25 +30,23 @@ export default function RegistroScreen() {
                 })
               });
         const data = await res.text();
-        setUsuarioTxt(data);
-        return data;
+        if(data != ''){
+            return Alert.alert('¡Felicitaciones! Ususario registrado');
+        }
+        else{
+            Alert.alert('Usuario ya existe')
+        }
     }
 
     const Registro = async () => {
-        console.log(nombre);
-        console.log(apellido);
-        console.log(edad);
-        console.log(correo);
-        console.log(contra);
-        console.log(confirmar);
-        if(confirmar == contra){            
-            return console.log(await CargarDatos());
+        if(confirmar == contra){ 
+            await CargarDatos();
         }
         else{
             return Alert.alert('Confirmacion de contraseña erronea, por favor volver a intentar')
         }
     }
-
+    
     return (
         <GradientBackground >
             <View style={[mainStyles.container, {padding: 50}]}>
