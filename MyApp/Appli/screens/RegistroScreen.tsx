@@ -1,33 +1,77 @@
-import React from 'react'
+import React, { useState, useContext} from 'react'
 import { Text, View, Button, TouchableOpacity, StyleSheet, Image, TextInput, Alert } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { GradientBackground } from '../componentes/GradientBackground';
 
 export default function RegistroScreen() {
+    const [nombre,setNombre]=useState('');
+    const [apellido,setApellido]=useState('');
+    const [edad,setEdad]=useState('');
+    const [correo,setCorreo]=useState('');
+    const [contra,setContra]=useState('');
+    const [confirmar,setConfirmar]=useState('');
+    const [usuario, setUsuario] = useState([]);
     
+    const [usuarioTxt, setUsuarioTxt] = useState('');
+
+    const CargarDatos = async () => {
+        const res = await fetch('http://10.0.2.2:8080/usuarios', {
+                method: 'POST',
+                headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "nombre": nombre,
+                    "contrasenia": contra,
+                    "correo": correo,
+                    "apellido": apellido,
+                    "edad": edad
+                })
+              });
+        const data = await res.text();
+        setUsuarioTxt(data);
+        return data;
+    }
+
+    const Registro = async () => {
+        console.log(nombre);
+        console.log(apellido);
+        console.log(edad);
+        console.log(correo);
+        console.log(contra);
+        console.log(confirmar);
+        if(confirmar == contra){            
+            return console.log(await CargarDatos());
+        }
+        else{
+            return Alert.alert('Confirmacion de contraseña erronea, por favor volver a intentar')
+        }
+    }
+
     return (
         <GradientBackground >
             <View style={[mainStyles.container, {padding: 50}]}>
                 <View style={loginStyles.logo}>
                     <Image source={require('@recursos/images/LogoTransparente.png')}
-                    style={{ height:250, width:250}}/>    
+                    style={{ height:200, width:200}}/>    
                 </View>
                 <Text style = {mainStyles.titleText}>Registrarse</Text>
-                <TextInput style= {styles.input}  placeholder='Nombre'/>
+                <TextInput style= {styles.input}  placeholder='Nombre' onChangeText={nombre => setNombre(nombre)} defaultValue={nombre}/>
                 
-                <TextInput style= {styles.input} placeholder='Apellido'/>
+                <TextInput style= {styles.input} placeholder='Apellido' onChangeText={apellido => setApellido(apellido)} defaultValue={apellido}/>
                 
-                <TextInput style= {styles.input} placeholder='Edad'/>
+                <TextInput style= {styles.input} placeholder='Edad' onChangeText={edad => setEdad(edad)} defaultValue={edad}/>
 
-                <TextInput style= {styles.input} placeholder='Correo'/>
+                <TextInput style= {styles.input} placeholder='Correo' onChangeText={correo => setCorreo(correo)} defaultValue={correo}/>
 
-                <TextInput style= {styles.input} placeholder='Contraseña'/>
+                <TextInput style= {styles.input} placeholder='Contraseña' onChangeText={contra => setContra(contra)} defaultValue={contra}/>
 
-                <TextInput style= {styles.input} placeholder='Confirmar Contraseña'/>
+                <TextInput style= {styles.input} placeholder='Confirmar Contraseña' onChangeText={confirmar => setConfirmar(confirmar)} defaultValue={confirmar}/>
 
                 <View>
-                <TouchableOpacity style={TamBtn.tamanio} onPress={() => Alert.alert('Inicio sesion')}>  
-                    <Text style={Txtformat.tamanio} >Iniciar sesión</Text>
+                <TouchableOpacity style={TamBtn.tamanio} onPress={() => Registro()}>  
+                    <Text style={Txtformat.tamanio} >Registrarse</Text>
                 </TouchableOpacity>
                 </View>
 
