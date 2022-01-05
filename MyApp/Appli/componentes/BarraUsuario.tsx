@@ -9,6 +9,8 @@ import Login from '../screens/Login'
 import { LogoTitle } from '../componentes/LogoTitle';
 import principalScreen from '../screens/principalScreen';
 
+import Chatbot from '../screens/Chatbot';
+
 const Tab = createBottomTabNavigator();
 
 
@@ -64,7 +66,7 @@ function MyTabs() {
 
           headerShown: true, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
-      <Tab.Screen name="Chatbot"component={vistaVacia} options={{
+      <Tab.Screen name="Chatbot"component={Chatbot} options={{
           tabBarIcon: ({focused}) =>(
               <View style={{alignItems:'center', justifyContent: 'center'}}>
                   <Image source={require('@recursos/images/chatbot.png')}

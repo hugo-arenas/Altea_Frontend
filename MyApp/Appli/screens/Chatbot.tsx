@@ -22,7 +22,9 @@ const steps = [
 
 const Chatbot = () => {
     return (
+
         <ChatBot steps={steps} />
+    
     )
     
 };
