@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import RegistroScreen from './Appli/screens/RegistroScreen';
+import Chatbot from './Appli/screens/Chatbot';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => RegistroScreen);
+AppRegistry.registerComponent(appName, () => Chatbot);
