@@ -7,9 +7,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import VistaPerfilEmpresa from '../screens/VistaPerfilEmpresa';
 import principalScreen from '../screens/principalScreen';
 import { LogoTitle } from './LogoTitle';
+import { StackScreenProps } from '@react-navigation/stack';
+import noticiaScreen from '../screens/noticiaScreen';
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+interface Props extends StackScreenProps<any,any>{};
+
+export const BarraEmpresa = (props: any) => {
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
         tabBarStyle: {
@@ -47,13 +51,8 @@ function MyTabs() {
 
           headerShown: true, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
-      
     </Tab.Navigator>
   );
 }
 
-export default function App() {
-  return (
-      <MyTabs/>
-  );
-}
+export default BarraEmpresa;

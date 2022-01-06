@@ -1,8 +1,8 @@
+import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react'
 import { ScrollView, StatusBar, Text, View } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { GradientBackground } from '../componentes/GradientBackground';
-import { StackScreenProps } from '@react-navigation/stack';
 
 interface RouterParams{
     id: number;
@@ -10,26 +10,25 @@ interface RouterParams{
 }
 interface Props extends StackScreenProps<any,any>{};
 
-export const noticiaScreen = ( {route}: Props) => {
+export const recomendacionScreen = ( {route}: Props) => {
+//console.log(JSON.stringify(props, null, 3))
 
-    //console.log(JSON.stringify(props, null, 3))
+const params = route.params as RouterParams;
+return (
+    <GradientBackground>
+        <ScrollView style={styles.scrollView}>
+    <Text style={styles.text}>
+      {
+          JSON.stringify(params.nombre, null, 3)
+      }
+    </Text>
 
-    const params = route.params as RouterParams;
-    return (
-        <GradientBackground>
-            <ScrollView style={styles.scrollView}>
-        <Text style={styles.text}>
-          {
-              JSON.stringify(params.nombre, null, 3)
-          }
-        </Text>
-
-      </ScrollView>
-        </GradientBackground>
-    )
+  </ScrollView>
+    </GradientBackground>
+)
 }
 
-export default noticiaScreen;
+export default recomendacionScreen;
 
 const styles = StyleSheet.create({
     container: {

@@ -15,7 +15,7 @@ const steps = [
     },
     {
         id : '3',
-        message : 'nos vimos',
+        message : ':(',
         end : true
     }
 ]
