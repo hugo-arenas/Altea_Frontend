@@ -63,7 +63,7 @@ const LoginEmpresa = ({navigation}: Props) => {
                 <TextInput style= {styles.input} placeholder='Contraseña'onChangeText={contra => setContra(contra)} defaultValue={contra}
                 secureTextEntry/>
             
-                <TouchableOpacity style={TamBtn.tamanio} onPress={() => Inicio()}>  
+                <TouchableOpacity style={TamBtn.tamanio} onPress={() => {Inicio(), navigation.navigate('BarraEmpresa')}}>  
                     <Text style={Txtformat.tamanio} >Iniciar sesión</Text>
                 </TouchableOpacity>
             

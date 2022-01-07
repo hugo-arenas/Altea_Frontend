@@ -13,6 +13,7 @@ import estadisticasScreen from '../screens/estadisticasScreen';
 import BarraSuperusuario from './BarraSuperusuario';
 import Login from '../screens/Login';
 import listadoClientesScreen from '../screens/listadoClientesScreen';
+import LoginEmpresa from '../screens/LoginEmpresa';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +22,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         
-        initialRouteName='BarraSuperusuario' //Indica la ventana con la cual inicia la aplicación
+        initialRouteName='LoginEmpresa' //Indica la ventana con la cual inicia la aplicación
 
       >
         <Stack.Screen name='BarraEmpresa' component={BarraEmpresa} options={{
@@ -69,7 +70,9 @@ export default function App() {
           headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
 
-
+    <Stack.Screen name='LoginEmpresa' component={LoginEmpresa} options={{
+          headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
+      }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
