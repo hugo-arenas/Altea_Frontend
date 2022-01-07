@@ -9,9 +9,15 @@ import {
     Alert,
     TextInput,
     StyleSheet,
+    KeyboardAvoidingView,
 } from 'react-native'
 
-export default function LoginScreen(){
+import { StackScreenProps } from '@react-navigation/stack';
+import BarraUsuario from '../componentes/BarraUsuario';
+
+interface Props extends StackScreenProps<any,any>{};
+
+const Login = ({navigation}: Props) => {
 
     const [correo,setCorreo]=useState('');
     const [contra,setContra]=useState('');
@@ -32,7 +38,8 @@ export default function LoginScreen(){
             setUsuario(JSON.parse(usuarioTxt))
             console.log(usuario)
             console.log(usuario.nombre)
-            return Alert.alert('Bienvenido ' + usuario.nombre +' '+ usuario.apellido)
+            return  navigation.navigate('BarraUsuario')
+            //Alert.alert('Bienvenido ' + usuario.nombre +' '+ usuario.apellido)
         }
         else{
             return Alert.alert('Datos erroneos')
@@ -41,35 +48,45 @@ export default function LoginScreen(){
 
     return(
         <GradientBackground>
-        <View style={[mainStyles.container, {padding: 50}]}>
-            <View style={loginStyles.logo}>
-                <Image source={require('@recursos/images/LogoTransparente.png')}
-                style={{ height:250, width:250}}/>    
-            </View>
-            <Text style = {mainStyles.titleText}>Inicio de sesión</Text>
-            <TextInput style= {styles.input} placeholder='E-mail' onChangeText={correo => setCorreo(correo)} defaultValue={correo}/>
+            <KeyboardAvoidingView
+                style={{flex:1}}>
+                <View style={[mainStyles.container, {padding: 50}]}>
+                    <View style={loginStyles.logo}>
+                        <Image source={require('@recursos/images/LogoTransparente.png')}
+                        style={{ height:250, width:250}}/>    
+                    </View>
+                <Text style = {mainStyles.titleText}>Inicio de sesión</Text>
+                <TextInput style= {styles.input} placeholder='E-mail' onChangeText={correo => setCorreo(correo)} defaultValue={correo}/>
             
-            <TextInput style= {styles.input} placeholder='Contraseña'onChangeText={contra => setContra(contra)} defaultValue={contra}/>
+                <TextInput style= {styles.input} placeholder='Contraseña'onChangeText={contra => setContra(contra)} defaultValue={contra}
+                secureTextEntry/>
             
-            <TouchableOpacity style={TamBtn.tamanio} onPress={() => Inicio()}>  
-                <Text style={Txtformat.tamanio} >Iniciar sesión</Text>
-            </TouchableOpacity>
-            
-            <View>
-                <TouchableOpacity onPress={() => Alert.alert('Recuperar contraseña')}>
-                    <Text style={ [{ textDecorationLine: 'underline'}]}>Recuperar contraseña</Text>
+                <TouchableOpacity style={TamBtn.tamanio} onPress={() => Inicio()}>  
+                    <Text style={Txtformat.tamanio} >Iniciar sesión</Text>
                 </TouchableOpacity>
-            </View>
-            <View>
-                <TouchableOpacity onPress={() => Alert.alert('Creación de cuenta')}>
-                    <Text style={ [{ textDecorationLine: 'underline'}]}>Crear cuenta</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+            
+                <View>
+                    <TouchableOpacity onPress={() => Alert.alert('Recuperar contraseña')}>
+                        <Text style={ [{ textDecorationLine: 'underline'}]}>Recuperar contraseña</Text>
+                    </TouchableOpacity>
+                </View>
+                <View>
+                    <TouchableOpacity onPress={() =>  navigation.navigate('RegistroScreen')}>
+                        <Text style={ [{ textDecorationLine: 'underline'}]}>Crear cuenta</Text>
+                    </TouchableOpacity>
+                </View>
+                </View>
+        </KeyboardAvoidingView>
         </GradientBackground>
     )
 
 };
+
+
+export default Login;
+
+
+
 const mainStyles = StyleSheet.create({
 
     container: {

@@ -10,7 +10,11 @@ import {
     StyleSheet,
 } from 'react-native'
 
-const VistaPerfil = () => {
+import { StackScreenProps } from "@react-navigation/stack";
+
+interface Props extends StackScreenProps<any,any>{};
+
+const VistaPerfil = ({navigation}: Props) => {
 
     const [superusuario, setSuperusuario] = useState([])
     const loadTasks = async () => {
@@ -41,7 +45,7 @@ const VistaPerfil = () => {
             </View>
 
             <Text style={{fontSize: 15, color:'white'}}>Clientes</Text>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={ () => navigation.navigate('listadoClientesScreen')}>
                 <Image source={require('@recursos/images/clientesLogo.png')}
                     style={styleImage.imageRecomendaciones}/>
             </TouchableOpacity>
@@ -52,6 +56,7 @@ const VistaPerfil = () => {
     
 };
 export default VistaPerfil;
+
 const mainStyles = StyleSheet.create({
 
     container: {

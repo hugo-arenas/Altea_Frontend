@@ -3,7 +3,6 @@ import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
 import { GradientBackground } from '../componentes/GradientBackground';
-import {StackNavigator} from '../componentes/StackNavigator';
 
 
 interface Props extends StackScreenProps<any,any>{};

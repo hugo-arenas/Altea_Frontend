@@ -10,11 +10,13 @@ import { LogoTitle } from '../componentes/LogoTitle';
 import principalScreen from '../screens/principalScreen';
 
 import Chatbot from '../screens/Chatbot';
+import { StackScreenProps } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
 
+interface Props extends StackScreenProps<any,any>{};
 
-function MyTabs() {
+export const BarraUsuario = (props: any) => {
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
         tabBarStyle: {
@@ -84,11 +86,4 @@ function MyTabs() {
   );
 }
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <MyTabs/>
-    </NavigationContainer>
-  );
-}
-
+export default BarraUsuario;

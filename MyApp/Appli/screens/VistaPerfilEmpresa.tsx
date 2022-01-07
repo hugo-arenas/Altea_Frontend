@@ -10,7 +10,11 @@ import {
     StyleSheet,
 } from 'react-native'
 
-const VistaPerfil = () => {
+import { StackScreenProps } from "@react-navigation/stack";
+
+interface Props extends StackScreenProps<any,any>{};
+
+const VistaPerfil = ({navigation}: Props) => {
 
     const [empresa, setEmpresa] = useState([])
     const loadTasks = async () => {
@@ -40,7 +44,7 @@ const VistaPerfil = () => {
                 <Text style={Txtformat.tamanioTitulos}>Correo empresarial   <Text style={Txtformat.tamanioInfo}>{empresa.correo}</Text> </Text>
             </View>
 
-            <TouchableOpacity >
+            <TouchableOpacity onPress={ () => navigation.navigate('EstadisticasScreen')}>
                 <Image source={require('@recursos/images/estadisticasLogo.png')}
                     style={styleImage.imageRecomendaciones}/>
             </TouchableOpacity>

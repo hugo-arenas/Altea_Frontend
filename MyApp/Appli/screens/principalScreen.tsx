@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StackScreenProps } from '@react-navigation/stack';
-import React/*, {useEffect, useState} */from 'react'
+import React from 'react'
 import { Image, ScrollView, StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
 import { GradientBackground } from '../componentes/GradientBackground';
 

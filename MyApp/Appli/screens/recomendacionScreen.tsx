@@ -11,7 +11,6 @@ interface RouterParams{
 interface Props extends StackScreenProps<any,any>{};
 
 export const recomendacionScreen = ( {route}: Props) => {
-//console.log(JSON.stringify(props, null, 3))
 
 const params = route.params as RouterParams;
 return (

@@ -7,9 +7,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import VistaPerfilSuperusuario from '../screens/VistaPerfilSuperusuario';
 import principalScreen from '../screens/principalScreen';
 import { LogoTitle } from './LogoTitle';
+import { StackScreenProps } from '@react-navigation/stack';
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+interface Props extends StackScreenProps<any,any>{};
+
+export const BarraSuperusuario = (props: any) => {
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
         tabBarStyle: {
@@ -52,10 +55,4 @@ function MyTabs() {
   );
 }
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <MyTabs/>
-    </NavigationContainer>
-  );
-}
+export default BarraSuperusuario;

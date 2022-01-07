@@ -12,7 +12,6 @@ interface Props extends StackScreenProps<any,any>{};
 
 export const noticiaScreen = ( {route}: Props) => {
 
-    //console.log(JSON.stringify(props, null, 3))
 
     const params = route.params as RouterParams;
     return (
