@@ -25,6 +25,10 @@ const LoginEmpresa = ({navigation}: Props) => {
     const [usuarioTxt, setUsuarioTxt] = useState('');
     const [usuario, setUsuario] = useState([]);
 
+    function validacion(){
+        navigation.navigate('BarraEmpresa', {correo})
+    }
+
     const Inicio = async () => {
         console.log(correo)
         console.log(contra)
@@ -35,15 +39,14 @@ const LoginEmpresa = ({navigation}: Props) => {
         //setUsuarioTxt(data)
         
         if(data != ''){
-            //setUsuario(JSON.parse(usuarioTxt))
             console.log(data)
-            //return  navigation.navigate('BarraEmpresa')
-            return Alert.alert('Bienvenido ')
+            Alert.alert('Bienvenido')
+            validacion();
         }
         else{
             setCorreo('')
             setContra('')
-            return Alert.alert('Datos erroneos')
+            Alert.alert('Datos erroneos');
         }
     }
 
@@ -63,7 +66,7 @@ const LoginEmpresa = ({navigation}: Props) => {
                 <TextInput style= {styles.input} placeholder='Contraseña'onChangeText={contra => setContra(contra)} defaultValue={contra}
                 secureTextEntry/>
             
-                <TouchableOpacity style={TamBtn.tamanio} onPress={() => {Inicio(), navigation.navigate('BarraEmpresa')}}>  
+                <TouchableOpacity style={TamBtn.tamanio} onPress={() => Inicio()}>  
                     <Text style={Txtformat.tamanio} >Iniciar sesión</Text>
                 </TouchableOpacity>
             

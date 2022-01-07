@@ -12,9 +12,14 @@ import {
 
 import { StackScreenProps } from "@react-navigation/stack";
 
+interface RouterParams{
+    nombre: string;
+    correo: string
+}
+
 interface Props extends StackScreenProps<any,any>{};
 
-const VistaPerfil = ({navigation}: Props) => {
+const VistaPerfil = ({navigation,route}: Props) => {
 
     const [empresa, setEmpresa] = useState([])
     const loadTasks = async () => {
@@ -27,6 +32,9 @@ const VistaPerfil = ({navigation}: Props) => {
     useEffect(() => {
         loadTasks()
     },[])
+
+    const params = route.params as RouterParams;
+    const correo = params.correo;
     
     return (
         <GradientBackground>
@@ -41,7 +49,7 @@ const VistaPerfil = ({navigation}: Props) => {
             </View>
 
             <View style={mainStyles.containerCenter}>
-                <Text style={Txtformat.tamanioTitulos}>Correo empresarial   <Text style={Txtformat.tamanioInfo}>{empresa.correo}</Text> </Text>
+                <Text style={Txtformat.tamanioTitulos}>Correo empresarial   <Text style={Txtformat.tamanioInfo}>{correo}</Text> </Text>
             </View>
 
             <TouchableOpacity onPress={ () => navigation.navigate('EstadisticasScreen')}>

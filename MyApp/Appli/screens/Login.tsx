@@ -26,6 +26,7 @@ const Login = ({navigation}: Props) => {
     const [usuario, setUsuario] = useState([]);
 
     const Inicio = async () => {
+        const dirc = 'BarraUsuario'
         console.log(correo)
         console.log(contra)
         const encodedCorreo = encodeURIComponent(correo);
@@ -37,7 +38,7 @@ const Login = ({navigation}: Props) => {
         if(data != ''){
             //setUsuario(JSON.parse(usuarioTxt))
             console.log(data)
-            return  navigation.navigate('BarraUsuario')//error
+            return  navigation.navigate(dirc)//error
             //Alert.alert('Bienvenido ' + usuario.nombre +' '+ usuario.apellido)
         }
         else{
