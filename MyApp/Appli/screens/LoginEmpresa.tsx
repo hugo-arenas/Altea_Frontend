@@ -13,11 +13,11 @@ import {
 } from 'react-native'
 
 import { StackScreenProps } from '@react-navigation/stack';
-import BarraUsuario from '../componentes/BarraUsuario';
+import BarraEmpresa from '../componentes/BarraEmpresa';
 
 interface Props extends StackScreenProps<any,any>{};
 
-const Login = ({navigation}: Props) => {
+const LoginEmpresa = ({navigation}: Props) => {
 
     const [correo,setCorreo]=useState('');
     const [contra,setContra]=useState('');
@@ -30,17 +30,19 @@ const Login = ({navigation}: Props) => {
         console.log(contra)
         const encodedCorreo = encodeURIComponent(correo);
         const encodedContra=encodeURIComponent(contra);
-        const res = await fetch(`http://10.0.2.2:8080/usuarios/${encodedCorreo}/${encodedContra}`)
+        const res = await fetch(`http://10.0.2.2:8080/empresas/${encodedCorreo}/${encodedContra}`)
         const data = await res.text()
         //setUsuarioTxt(data)
         
         if(data != ''){
             //setUsuario(JSON.parse(usuarioTxt))
             console.log(data)
-            return  navigation.navigate('BarraUsuario')//error
-            //Alert.alert('Bienvenido ' + usuario.nombre +' '+ usuario.apellido)
+            //return  navigation.navigate('BarraEmpresa')
+            return Alert.alert('Bienvenido ')
         }
         else{
+            setCorreo('')
+            setContra('')
             return Alert.alert('Datos erroneos')
         }
     }
@@ -55,6 +57,7 @@ const Login = ({navigation}: Props) => {
                         style={{ height:250, width:250}}/>    
                     </View>
                 <Text style = {mainStyles.titleText}>Inicio de sesión</Text>
+                <Text style = {mainStyles.titleText}>Empresa</Text>
                 <TextInput style= {styles.input} placeholder='E-mail' onChangeText={correo => setCorreo(correo)} defaultValue={correo}/>
             
                 <TextInput style= {styles.input} placeholder='Contraseña'onChangeText={contra => setContra(contra)} defaultValue={contra}
@@ -82,7 +85,7 @@ const Login = ({navigation}: Props) => {
 };
 
 
-export default Login;
+export default LoginEmpresa;
 
 
 
@@ -102,8 +105,7 @@ const mainStyles = StyleSheet.create({
 
     titleText: {
         fontSize: 35,
-        marginTop: 15,
-        marginBottom: 15,
+        marginBottom: 5,
         fontFamily: "Poppins-SemiBold",
         color: '#FFFF',
         fontWeight: 'bold',
