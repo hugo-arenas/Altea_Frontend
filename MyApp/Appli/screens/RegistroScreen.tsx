@@ -2,17 +2,21 @@ import React, { useState, useContext} from 'react'
 import { Text, View, Button, TouchableOpacity, StyleSheet, Image, TextInput, Alert } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { GradientBackground } from '../componentes/GradientBackground';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export default function RegistroScreen() {
+interface Props extends StackScreenProps<any,any>{};
+
+export default function RegistroScreen({navigation}: Props) {
     const [nombre,setNombre]=useState('');
     const [apellido,setApellido]=useState('');
     const [edad,setEdad]=useState('');
     const [correo,setCorreo]=useState('');
     const [contra,setContra]=useState('');
     const [confirmar,setConfirmar]=useState('');
-    const [usuario, setUsuario] = useState([]);
-    
-    const [usuarioTxt, setUsuarioTxt] = useState('');
+
+    function validacion(){
+        navigation.navigate('Login')
+    }
 
     const CargarDatos = async () => {
         const res = await fetch('http://10.0.2.2:8080/usuarios', {
@@ -31,9 +35,17 @@ export default function RegistroScreen() {
               });
         const data = await res.text();
         if(data != ''){
-            return Alert.alert('¡Felicitaciones! Ususario registrado');
+            console.log(data)
+            Alert.alert('¡Felicitaciones! Ususario registrado, por favor iniciar sesión')
+            validacion();
         }
         else{
+            setNombre('')
+            setApellido('')
+            setEdad('')
+            setCorreo('')
+            setContra('')
+            setConfirmar('')
             Alert.alert('Usuario ya existe')
         }
     }
@@ -63,20 +75,14 @@ export default function RegistroScreen() {
 
                 <TextInput style= {styles.input} placeholder='Correo' onChangeText={correo => setCorreo(correo)} defaultValue={correo}/>
 
-                <TextInput style= {styles.input} placeholder='Contraseña' onChangeText={contra => setContra(contra)} defaultValue={contra}/>
+                <TextInput style= {styles.input} placeholder='Contraseña' onChangeText={contra => setContra(contra)} defaultValue={contra} secureTextEntry/>
 
-                <TextInput style= {styles.input} placeholder='Confirmar Contraseña' onChangeText={confirmar => setConfirmar(confirmar)} defaultValue={confirmar}/>
+                <TextInput style= {styles.input} placeholder='Confirmar Contraseña' onChangeText={confirmar => setConfirmar(confirmar)} defaultValue={confirmar} secureTextEntry/>
 
                 <View>
                 <TouchableOpacity style={TamBtn.tamanio} onPress={() => Registro()}>  
                     <Text style={Txtformat.tamanio} >Registrarse</Text>
                 </TouchableOpacity>
-                </View>
-
-                <View>
-                    <TouchableOpacity onPress={() => Alert.alert('RecuperarPassword')}>
-                        <Text style={ [{ textDecorationLine: 'underline'}]}>Crear cuenta</Text>
-                    </TouchableOpacity>
                 </View>
             </View>
         </GradientBackground>

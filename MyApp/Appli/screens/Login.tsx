@@ -66,11 +66,6 @@ const Login = ({navigation}: Props) => {
                 </TouchableOpacity>
             
                 <View>
-                    <TouchableOpacity onPress={() => Alert.alert('Recuperar contraseña')}>
-                        <Text style={ [{ textDecorationLine: 'underline'}]}>Recuperar contraseña</Text>
-                    </TouchableOpacity>
-                </View>
-                <View>
                     <TouchableOpacity onPress={() =>  navigation.navigate('RegistroScreen')}>
                         <Text style={ [{ textDecorationLine: 'underline'}]}>Crear cuenta</Text>
                     </TouchableOpacity>

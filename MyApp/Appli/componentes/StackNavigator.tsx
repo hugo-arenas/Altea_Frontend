@@ -26,7 +26,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         
-        initialRouteName='LoginSuper' //Indica la ventana con la cual inicia la aplicación
+        initialRouteName='Login' //Indica la ventana con la cual inicia la aplicación
 
       >
         <Stack.Screen name='BarraEmpresa' component={BarraEmpresa} options={{
