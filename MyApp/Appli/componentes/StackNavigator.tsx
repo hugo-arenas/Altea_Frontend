@@ -15,6 +15,9 @@ import Login from '../screens/Login';
 import listadoClientesScreen from '../screens/listadoClientesScreen';
 import LoginEmpresa from '../screens/LoginEmpresa';
 import VistaPerfilEmpresa from '../screens/VistaPerfilEmpresa';
+import VistaPerfilUsuario from '../screens/VistaPerfilUsuario';
+import LoginSuper from '../screens/LoginSuper';
+import VistaPerfilSuperusuario from '../screens/VistaPerfilSuperusuario';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +26,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator
         
-        initialRouteName='LoginEmpresa' //Indica la ventana con la cual inicia la aplicación
+        initialRouteName='LoginSuper' //Indica la ventana con la cual inicia la aplicación
 
       >
         <Stack.Screen name='BarraEmpresa' component={BarraEmpresa} options={{
@@ -76,6 +79,17 @@ export default function App() {
       }}/>
 
       <Stack.Screen name='VistaPerfilEmpresa' component={VistaPerfilEmpresa} options={{
+          headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
+      }}/>
+
+      <Stack.Screen name='VistaPerfilUsuario' component={VistaPerfilUsuario} options={{
+          headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
+      }}/>
+
+      <Stack.Screen name='LoginSuper' component={LoginSuper} options={{
+          headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
+      }}/>
+      <Stack.Screen name='VistaPerfilSuperusuario' component={VistaPerfilSuperusuario} options={{
           headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
     

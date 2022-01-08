@@ -12,13 +12,21 @@ import {
 
 import { StackScreenProps } from "@react-navigation/stack";
 
+interface RouterParams{
+    nombre: string;
+    correo: string
+}
+
 interface Props extends StackScreenProps<any,any>{};
 
-const VistaPerfil = ({navigation}: Props) => {
+const VistaPerfil = ({navigation,route}: Props) => {
+
+    const params = route.params as RouterParams;
+    const correo = params.correo;
 
     const [superusuario, setSuperusuario] = useState([])
     const loadTasks = async () => {
-        const res = await fetch('http://10.0.2.2:8080/superusuarios/1')
+        const res = await fetch(`http://10.0.2.2:8080/superusuarios/${correo}`)
         const data = await res.json()
         console.log(data)
         setSuperusuario(data)
@@ -41,7 +49,7 @@ const VistaPerfil = ({navigation}: Props) => {
             </View>
 
             <View style={mainStyles.containerCenter}>
-                <Text style={Txtformat.tamanioTitulos}>Correo   <Text style={Txtformat.tamanioInfo}>{superusuario.correo}</Text> </Text>
+                <Text style={Txtformat.tamanioTitulos}>Correo   <Text style={Txtformat.tamanioInfo}>{correo}</Text> </Text>
             </View>
 
             <Text style={{fontSize: 15, color:'white'}}>Clientes</Text>

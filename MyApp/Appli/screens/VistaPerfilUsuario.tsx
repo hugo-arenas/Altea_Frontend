@@ -8,13 +8,23 @@ import {
     Alert,
     TextInput,
     StyleSheet,
-} from 'react-native'
+} from 'react-native';
+import { StackScreenProps } from "@react-navigation/stack";
 
-const VistaPerfil = () => {
+interface RouterParams{
+    nombre: string;
+    correo: string
+}
 
+interface Props extends StackScreenProps<any,any>{};
+
+const VistaPerfil = ({navigation,route}: Props) => {
+    const params = route.params as RouterParams;
+    const correo = params.correo;
+    
     const [usuarios, setUsuaruos] = useState([])
     const loadTasks = async () => {
-        const res = await fetch('http://10.0.2.2:8080/usuarios/5')
+        const res = await fetch(`http://10.0.2.2:8080/usuarios/${correo}`)
         const data = await res.json()
         console.log(data)
         setUsuaruos(data)
@@ -41,7 +51,7 @@ const VistaPerfil = () => {
             </View>
 
             <View style={mainStyles.containerCenter}>
-                <Text style={Txtformat.tamanioTitulos}>Correo       <Text style={Txtformat.tamanioInfo}>{usuarios.correo}</Text> </Text>
+                <Text style={Txtformat.tamanioTitulos}>Correo       <Text style={Txtformat.tamanioInfo}>{correo}</Text> </Text>
             </View>
 
             

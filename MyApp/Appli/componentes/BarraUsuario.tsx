@@ -14,9 +14,17 @@ import { StackScreenProps } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
 
+interface RouterParams{
+  nombre: string;
+  correo: string
+}
+
 interface Props extends StackScreenProps<any,any>{};
 
-export const BarraUsuario = (props: any) => {
+export const BarraUsuario = ({route}: Props) => {
+  const params = route.params as RouterParams;
+  console.log(params.correo);
+  const correo = params.correo;
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
         tabBarStyle: {
@@ -54,7 +62,7 @@ export const BarraUsuario = (props: any) => {
 
           headerShown: true, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
-      <Tab.Screen name="perfil" component={VistaPerfilUsuario} options={{
+      <Tab.Screen name="perfil" component={VistaPerfilUsuario} initialParams={{correo}} options={{
           tabBarIcon: ({focused}) =>(
               <View style={{alignItems:'center', justifyContent: 'center'}}>
                   <Image source={require('@recursos/images/user.png')}

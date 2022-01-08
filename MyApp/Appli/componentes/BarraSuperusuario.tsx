@@ -10,9 +10,17 @@ import { LogoTitle } from './LogoTitle';
 import { StackScreenProps } from '@react-navigation/stack';
 const Tab = createBottomTabNavigator();
 
+interface RouterParams{
+  nombre: string;
+  correo: string
+}
+
 interface Props extends StackScreenProps<any,any>{};
 
-export const BarraSuperusuario = (props: any) => {
+export const BarraSuperusuario = ({route}: Props) => {
+  const params = route.params as RouterParams;
+  console.log(params.correo);
+  const correo = params.correo;
   return (
     <Tab.Navigator screenOptions={({ route }) => ({
         tabBarStyle: {
@@ -36,7 +44,7 @@ export const BarraSuperusuario = (props: any) => {
           
           headerShown: true, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
-      <Tab.Screen name="Perfil Superusuario" component={VistaPerfilSuperusuario} options={{
+      <Tab.Screen name="Perfil Superusuario" component={VistaPerfilSuperusuario} initialParams={{correo}} options={{
           tabBarIcon: ({focused}) =>(
               <View style={{alignItems:'center', justifyContent: 'center'}}>
                   <Image source={require('@recursos/images/user.png')}

@@ -22,27 +22,27 @@ const Login = ({navigation}: Props) => {
     const [correo,setCorreo]=useState('');
     const [contra,setContra]=useState('');
 
-    const [usuarioTxt, setUsuarioTxt] = useState('');
-    const [usuario, setUsuario] = useState([]);
+    function validacion(){
+        navigation.navigate('BarraUsuario', {correo})
+    }
 
     const Inicio = async () => {
-        const dirc = 'BarraUsuario'
         console.log(correo)
         console.log(contra)
         const encodedCorreo = encodeURIComponent(correo);
         const encodedContra=encodeURIComponent(contra);
         const res = await fetch(`http://10.0.2.2:8080/usuarios/${encodedCorreo}/${encodedContra}`)
         const data = await res.text()
-        //setUsuarioTxt(data)
         
         if(data != ''){
-            //setUsuario(JSON.parse(usuarioTxt))
             console.log(data)
-            return  navigation.navigate(dirc)//error
-            //Alert.alert('Bienvenido ' + usuario.nombre +' '+ usuario.apellido)
+            Alert.alert('Bienvenido')
+            validacion();
         }
         else{
-            return Alert.alert('Datos erroneos')
+            setCorreo('')
+            setContra('')
+            Alert.alert('Datos erroneos');
         }
     }
 

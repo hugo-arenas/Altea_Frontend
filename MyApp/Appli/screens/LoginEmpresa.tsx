@@ -22,9 +22,6 @@ const LoginEmpresa = ({navigation}: Props) => {
     const [correo,setCorreo]=useState('');
     const [contra,setContra]=useState('');
 
-    const [usuarioTxt, setUsuarioTxt] = useState('');
-    const [usuario, setUsuario] = useState([]);
-
     function validacion(){
         navigation.navigate('BarraEmpresa', {correo})
     }

@@ -20,10 +20,11 @@ interface RouterParams{
 interface Props extends StackScreenProps<any,any>{};
 
 const VistaPerfil = ({navigation,route}: Props) => {
-
+    const params = route.params as RouterParams;
+    const correo = params.correo;
     const [empresa, setEmpresa] = useState([])
     const loadTasks = async () => {
-        const res = await fetch('http://10.0.2.2:8080/empresas/1')
+        const res = await fetch(`http://10.0.2.2:8080/empresas/${correo}`)
         const data = await res.json()
         console.log(data)
         setEmpresa(data)
@@ -32,9 +33,6 @@ const VistaPerfil = ({navigation,route}: Props) => {
     useEffect(() => {
         loadTasks()
     },[])
-
-    const params = route.params as RouterParams;
-    const correo = params.correo;
     
     return (
         <GradientBackground>

@@ -22,8 +22,9 @@ const LoginSuper = ({navigation}: Props) => {
     const [correo,setCorreo]=useState('');
     const [contra,setContra]=useState('');
 
-    const [usuarioTxt, setUsuarioTxt] = useState('');
-    const [usuario, setUsuario] = useState([]);
+    function validacion(){
+        navigation.navigate('BarraSuperusuario', {correo})
+    }
 
     const Inicio = async () => {
         console.log(correo)
@@ -35,15 +36,14 @@ const LoginSuper = ({navigation}: Props) => {
         //setUsuarioTxt(data)
         
         if(data != ''){
-            //setUsuario(JSON.parse(usuarioTxt))
             console.log(data)
-            //return  navigation.navigate('BarraSuperusuario')
-            return Alert.alert('Bienvenido ')
+            Alert.alert('Bienvenido')
+            validacion();
         }
         else{
             setCorreo('')
             setContra('')
-            return Alert.alert('Datos erroneos')
+            Alert.alert('Datos erroneos');
         }
     }
 
