@@ -18,10 +18,13 @@ interface Props extends StackScreenProps<any,any>{};
 
 
 const sintomasScreen = ({navigation}: Props) => {
+    
+
+  const [contador,setContador] = useState(0);
+  console.log(contador)
 
     return (
         <GradientBackground>
-          
           
  
           <Text style={stylesTwo.formulario}> ¿Cómo te sientes hoy? </Text>
@@ -36,7 +39,11 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Calmado/a"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador + 1) :
+          setContador( contador - 1)}}
+        
+        
         />
 
         <BouncyCheckbox
@@ -47,7 +54,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Cansado/a"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 2) :
+          setContador( contador + 2)}}
         />
 
         <BouncyCheckbox
@@ -58,7 +67,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Feliz"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador + 4) :
+          setContador( contador - 4)}}
         />
 
         <BouncyCheckbox
@@ -69,7 +80,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Con energía"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador + 2) :
+          setContador( contador - 2)}}
         />
 
         <BouncyCheckbox
@@ -80,7 +93,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Optimista"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador + 3) :
+          setContador( contador - 3)}}
         />
 
         <BouncyCheckbox
@@ -91,7 +106,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Pesimista"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 3) :
+          setContador( contador + 3)}}
         />
 
         <BouncyCheckbox
@@ -102,7 +119,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Activo/a"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador + 1) :
+          setContador( contador - 1)}}
         />
 
         <BouncyCheckbox
@@ -113,7 +132,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Cambios de humor"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 1) :
+          setContador( contador + 1)}}
         />
 
         <BouncyCheckbox
@@ -124,7 +145,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Irritado/a"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 2) :
+          setContador( contador + 2)}}
         />
 
         <BouncyCheckbox
@@ -135,7 +158,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Triste"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 4) :
+          setContador( contador + 4)}}
         />
 
         <BouncyCheckbox
@@ -146,7 +171,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Ansioso/a"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 1) :
+          setContador( contador + 1)}}
         />
 
         <BouncyCheckbox
@@ -157,7 +184,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Deprimido/a"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 3) :
+          setContador( contador + 3)}}
         />
 
         <BouncyCheckbox
@@ -168,7 +197,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Pensamientos obsesivos"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 2) :
+          setContador( contador + 2)}}
         />
 
         <BouncyCheckbox
@@ -179,7 +210,9 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Apatía"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador - 1) :
+          setContador( contador + 1)}}
         />
 
         <BouncyCheckbox
@@ -201,14 +234,18 @@ const sintomasScreen = ({navigation}: Props) => {
         text="Autocrítica"
         iconStyle={{ borderColor: "#B400FE" }}
         textStyle={{ fontFamily: "JosefinSans-Regular" }}
-        onPress={(isChecked: boolean) => {}}
+        onPress={(isChecked: boolean) => {isChecked === true ?
+          setContador( contador + 1) :
+          setContador( contador - 1)}}
         />
 
 
         </View>
 
         <TouchableOpacity
-                  style={styles.colorBtn} activeOpacity={0.5} onPress={ () => navigation.navigate('resultadoSintomasScreen')}
+                  style={styles.colorBtn} activeOpacity={0.5} onPress={ () => navigation.navigate('resultadoSintomasScreen',{
+                    contador: contador
+                  })}
                 >
             <Text style={styles.colorTxtBtn}>Enviar sintomas</Text>
         </TouchableOpacity>
