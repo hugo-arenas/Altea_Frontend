@@ -15,7 +15,7 @@ const principalScreen = ({navigation}: Props) => {
 
     return (
         <GradientBackground>
-            <Text style = {mainStyles.titleText}>Noticias</Text>
+            <Text style = {mainStyles.titleText}>Material Sicoeducativo</Text>
             <ScrollView contentContainerStyle={styles.contentContainer} horizontal={true}>
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia',  {
@@ -158,7 +158,7 @@ const mainStyles = StyleSheet.create({
     },
 
     titleText: {
-        fontSize: 35,
+        fontSize: 25,
         marginTop: 15,
         marginBottom: 15,
         fontFamily: "Roboto-Medium",

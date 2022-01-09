@@ -18,6 +18,8 @@ import VistaPerfilEmpresa from '../screens/VistaPerfilEmpresa';
 import VistaPerfilUsuario from '../screens/VistaPerfilUsuario';
 import LoginSuper from '../screens/LoginSuper';
 import VistaPerfilSuperusuario from '../screens/VistaPerfilSuperusuario';
+import sintomasScreen from '../screens/sintomasScreen';
+import resultadoSintomasScreen from '../screens/resultadoSintomasScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -92,6 +94,15 @@ export default function App() {
       <Stack.Screen name='VistaPerfilSuperusuario' component={VistaPerfilSuperusuario} options={{
           headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
+      <Stack.Screen name='sintomasScreen' component={sintomasScreen} options={{
+          headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
+      }}/>
+      <Stack.Screen name='resultadoSintomasScreen' component={resultadoSintomasScreen} options={{headerStyle: {
+          backgroundColor: '#D49AED',
+        },
+        headerTitle: (props)  => <LogoTitle {...props} />,
+        
+        headerShown: true,}}/>
     
       </Stack.Navigator>
     </NavigationContainer>

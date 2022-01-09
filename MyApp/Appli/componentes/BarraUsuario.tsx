@@ -11,6 +11,7 @@ import principalScreen from '../screens/principalScreen';
 
 import Chatbot from '../screens/Chatbot';
 import { StackScreenProps } from '@react-navigation/stack';
+import sintomasScreen from '../screens/sintomasScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,7 +49,7 @@ export const BarraUsuario = ({route}: Props) => {
 
           headerShown: true, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
-      <Tab.Screen name='lista'component={vistaVacia} options={{
+      <Tab.Screen name='lista'component={sintomasScreen} options={{
           tabBarIcon: ({focused}) =>(
               <View style={{alignItems:'center', justifyContent: 'center'}}>
                   <Image source={require('@recursos/images/list.png')}
