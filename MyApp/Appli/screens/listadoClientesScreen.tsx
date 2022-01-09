@@ -1,77 +1,41 @@
-import React from 'react'
-import { Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React,{useEffect, useState} from "react";
+import { Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View,FlatList } from 'react-native';
 import { GradientBackground } from '../componentes/GradientBackground';
+import { StackScreenProps } from "@react-navigation/stack";
 
-const listadoClientesScreen = () => {
+
+interface Props extends StackScreenProps<any,any>{};
+
+const listadoClientesScreen = ({navigation,route}: Props) => {
+    const [empresa, setEmpresa] = useState([])
+    const loadEmpresa = async () => {
+        const res = await fetch('http://10.0.2.2:8080/empresas')
+        const data = await res.json()
+        setEmpresa(data)
+    }
+
+    useEffect(() => {
+        loadEmpresa()
+    },[])
+
     return (
         <GradientBackground>
             <Text style = {mainStyles.titleText}>Clientes</Text>
-            <ScrollView style={styles.scrollView}>
+            <FlatList
+                data = {empresa}
+                renderItem={({item}) => {
+                    return <View style={mainStyles.cont}>
+                        <View style={mainStyles.containerCenter}>
+                    <Text style={Txtformat.tamanioInfo}><Image source={require('@recursos/images/clientesLogo.png')}
+                    style={{ height:30, width:30}}/>{item.nombre} <TouchableOpacity style={{marginRight: 0, marginTop: 5}} onPress={ () => navigation.navigate('EstadisticasScreen')}>
+                    <Image source={require('@recursos/images/estadisticasLogo.png')}
+                        style={{ height:30, width:30}}/>
+                </TouchableOpacity></Text>
+                    </View>
 
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaUno.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaDos.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaTres.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaUno.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaDos.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaTres.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaUno.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaDos.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaTres.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaUno.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaDos.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                <TouchableOpacity >
-                <Image source={require('@recursos/images/noticiaTres.png')}
-                    style={styleImage.imageNoticias}/>
-                </TouchableOpacity>
-
-                
-
-      </ScrollView>
+                    </View>
+                }}
+            />
         </GradientBackground>
     )
     
@@ -86,10 +50,17 @@ const mainStyles = StyleSheet.create({
         backgroundColor: 'linear-gradient(180deg, #FF814B 0%, #FAC3AC 100%)',
     },
 
+    cont: {
+        alignItems: 'center'
+    },
+
     containerCenter: {
-        paddingTop: 10,
-        alignItems: 'center',
         marginBottom: 25,
+        backgroundColor: '#ffff',
+        height: 50,
+        width: 300,
+        borderRadius: 50,
+
     },
 
     titleText: {
@@ -137,6 +108,24 @@ const mainStyles = StyleSheet.create({
         fontFamily: 'Poppins-Light',
     },
     
+})
+const Txtformat = StyleSheet.create({
+
+    tamanioTitulos: {
+        fontSize: 15, 
+        color: '#808080',
+        marginLeft: 20,
+        fontWeight: 'bold',
+        marginTop: 8,
+    },
+    tamanioInfo:{
+        fontSize: 20, 
+        color: '#000', 
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginTop: 2
+
+    }
 })
 
 const styles = StyleSheet.create({

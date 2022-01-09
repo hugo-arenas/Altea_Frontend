@@ -72,9 +72,12 @@ export default function App() {
           headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
       }}/>
 
-      <Stack.Screen name='listadoClientesScreen' component={listadoClientesScreen} options={{
-          headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos
-      }}/>
+      <Stack.Screen name='listadoClientesScreen' component={listadoClientesScreen} options={{headerStyle: {
+          backgroundColor: '#D49AED',
+        },
+        headerTitle: (props)  => <LogoTitle {...props} />,
+        
+        headerShown: true,}}/>
 
       <Stack.Screen name='LoginEmpresa' component={LoginEmpresa} options={{
           headerShown: false, //para ocultar la barra superior que indica la pestaña en la que nos encontramos

@@ -15,7 +15,7 @@ const principalScreen = ({navigation}: Props) => {
 
     return (
         <GradientBackground>
-            <Text style = {mainStyles.titleText}>Material Sicoeducativo</Text>
+            <Text style = {mainStyles.titleText}>Material Psicoeducativo</Text>
             <ScrollView contentContainerStyle={styles.contentContainer} horizontal={true}>
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia',  {
