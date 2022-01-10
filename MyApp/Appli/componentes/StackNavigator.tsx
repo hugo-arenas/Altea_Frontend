@@ -20,6 +20,7 @@ import LoginSuper from '../screens/LoginSuper';
 import VistaPerfilSuperusuario from '../screens/VistaPerfilSuperusuario';
 import sintomasScreen from '../screens/sintomasScreen';
 import resultadoSintomasScreen from '../screens/resultadoSintomasScreen';
+import { LogoRight } from './LogoRight';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,7 +39,7 @@ export default function App() {
         <Stack.Screen name='Noticia' component={noticiaScreen}options={{headerStyle: {
           backgroundColor: '#D49AED',
         },
-        headerTitle: (props)  => <LogoTitle {...props} />,
+        headerTitle: (props)  => <LogoRight {...props} />,
         
         headerShown: true,}}
         />
@@ -46,7 +47,7 @@ export default function App() {
         <Stack.Screen name='RecomendacionScreen' component={recomendacionScreen}options={{headerStyle: {
           backgroundColor: '#D49AED',
         },
-        headerTitle: (props)  => <LogoTitle {...props} />,
+        headerTitle: (props)  => <LogoRight {...props} />,
         
         headerShown: true,}}/>
         <Stack.Screen name='BarraUsuario' component={BarraUsuario} options={{
@@ -56,7 +57,7 @@ export default function App() {
         <Stack.Screen name='EstadisticasScreen' component={estadisticasScreen} options={{headerStyle: {
           backgroundColor: '#D49AED',
         },
-        headerTitle: (props)  => <LogoTitle {...props} />,
+        headerTitle: (props)  => <LogoRight {...props} />,
         
         headerShown: true,}}/>
 
@@ -75,7 +76,7 @@ export default function App() {
       <Stack.Screen name='listadoClientesScreen' component={listadoClientesScreen} options={{headerStyle: {
           backgroundColor: '#D49AED',
         },
-        headerTitle: (props)  => <LogoTitle {...props} />,
+        headerTitle: (props)  => <LogoRight {...props} />,
         
         headerShown: true,}}/>
 
@@ -103,7 +104,7 @@ export default function App() {
       <Stack.Screen name='resultadoSintomasScreen' component={resultadoSintomasScreen} options={{headerStyle: {
           backgroundColor: '#D49AED',
         },
-        headerTitle: (props)  => <LogoTitle {...props} />,
+        headerTitle: (props)  => <LogoRight {...props} />,
         
         headerShown: true,}}/>
     
