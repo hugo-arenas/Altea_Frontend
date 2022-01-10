@@ -53,8 +53,8 @@ const LoginSuper = ({navigation}: Props) => {
                 style={{flex:1}}>
                 <View style={[mainStyles.container, {padding: 50}]}>
                     <View style={loginStyles.logo}>
-                        <Image source={require('@recursos/images/LogoTransparente.png')}
-                        style={{ height:250, width:250}}/>    
+                        <Image source={require('@recursos/images/logoAzul.png')}
+                        style={{ height:220, width:250, resizeMode: 'stretch',}}/>    
                     </View>
                 <Text style = {mainStyles.titleText}>Inicio de sesión</Text>
                 <Text style = {mainStyles.titleText}>Super Usuario</Text>

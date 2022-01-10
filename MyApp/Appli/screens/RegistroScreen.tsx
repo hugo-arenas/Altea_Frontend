@@ -63,8 +63,8 @@ export default function RegistroScreen({navigation}: Props) {
         <GradientBackground >
             <View style={[mainStyles.container, {padding: 50}]}>
                 <View style={loginStyles.logo}>
-                    <Image source={require('@recursos/images/LogoTransparente.png')}
-                    style={{ height:200, width:200}}/>    
+                    <Image source={require('@recursos/images/logoAzul.png')}
+                    style={{ height:220, width:250, resizeMode: 'stretch',}}/>    
                 </View>
                 <Text style = {mainStyles.titleText}>Registrarse</Text>
                 <TextInput style= {styles.input}  placeholder='Nombre' onChangeText={nombre => setNombre(nombre)} defaultValue={nombre}/>
