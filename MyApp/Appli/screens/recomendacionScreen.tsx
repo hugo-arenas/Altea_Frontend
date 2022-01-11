@@ -6,7 +6,8 @@ import { GradientBackground } from '../componentes/GradientBackground';
 
 interface RouterParams{
     id: number;
-    nombre: string
+    title: string;
+    cuerpo: string;
 }
 interface Props extends StackScreenProps<any,any>{};
 
@@ -18,9 +19,18 @@ return (
         <ScrollView style={styles.scrollView}>
     <Text style={styles.text}>
       {
-          JSON.stringify(params.nombre, null, 3)
+          params.title
       }
     </Text>
+
+    <Text style={{marginHorizontal:20, marginTop:5, fontSize:15}}>
+          {
+            
+            params.cuerpo
+          }
+        </Text>
+
+
 
   </ScrollView>
     </GradientBackground>
@@ -30,15 +40,16 @@ return (
 export default recomendacionScreen;
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      paddingTop: StatusBar.currentHeight,
-    },
-    scrollView: {
-      backgroundColor: 'rgba(0,0,0,0.05)',
-      marginHorizontal: 20,
-    },
-    text: {
-      fontSize: 22,
-    },
-  });
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+  },
+  scrollView: {
+    backgroundColor: 'rgba(0,0,0,0.05)',
+    marginHorizontal: 20,
+  },
+  text: {
+    fontSize: 22,
+    fontWeight: 'bold'
+  }
+});

@@ -1,5 +1,32 @@
 {
     "id":[1,2,3,4,5,6,7],
-    "nombre": ["Texto1","Texto2","Texto3","Texto4","Texto5","Texto6","Texto7"]
+    "title":["Burnout o síndrome de quemarse en el trabajo","Todo lo que necesitas saber sobre Depresión"],
+    "cuerpo": ["El agotamiento laboral es un tipo especial de estrés relacionado con el trabajo, un estado de agotamiento físico o emocional que también implica una ausencia de la sensación de logro y pérdida de la identidad personal.\n"+
+        "Cualquiera que sea la causa, el agotamiento laboral puede afectar la salud física y mental.\n"+
+             "Analiza cómo saber si tienes agotamiento laboral y qué puedes hacer al respecto. El agotamiento laboral ignorado o no abordado puede tener consecuencias significativas, entre ellas:\n\n"+
+               "\t-Estrés excesivo\n"+
+               "\t-Fatiga\n"+
+               "\t-Insomnio\n"+
+               "\t-Tristeza, enojo o irritabilidad\n"+
+               "\t-Consumo inadecuado de alcohol y de sustancias\n"+
+               "\t-Enfermedad cardíaca\n"+
+               "\t-Presión arterial alta\n"+
+               "\t-Diabetes tipo 2\n"+
+               "\t-Vulnerabilidad a las enfermedades\n\n"+
+               "Te presentamos un ejercicio que puedes hacer cuando sientas estrés o dificultad para poder estar en el momento presente:\n\n"+
+               "\t1. Inhale lentamente (uno, dos, tres; uno, dos, tres; uno, dos, tres) por la nariz y llene cómodamente sus pulmones, deténgase cuando llegue estómago.\n"+
+               "\t2. Suave y silenciosamente dígase: “Mi cuerpo se está́ llenando de calma” (de paz o cualquier palabra que resuene contigo y evoque sensación de relajo).\n"+
+               "\t3. Exhale lentamente (uno, dos, tres; uno, dos, tres; uno, dos, tres) por la boca y cómodamente vacíe los pulmones hasta llenar el estómago.\n"+
+               "\t4. Suave y silenciosamente dígase: “Mi cuerpo se está́ liberando de tensión” o cualquier frase que te resuene y logre el objetivo de liberarte de tensiones.\n"+
+               "\tRepita cinco veces suave y cómodamente.\n"+
+               "\t6. Haga esto diariamente cuantas veces sea necesario.",
+
+        "¿Has tenido periodos en donde te has sentido deprimido? ¿Esta sensación ha permanecido en el tiempo, quizás durante años? ¿Es esto depresión?\n\n"+
+        
+        "La depresión es un trastorno en el estado de ánimo en donde se experimentan frecuentemente emociones de tristeza, pérdida, ira o frustración, las cuales interfieren en las funciones de nuestra vida diaria de manera directa, impidiéndonos poder desarrollarlas de manera óptima y alejándonos de la sensación de bienestar y en casos más graves incluso intentos de acabar con la propia vida.\n\n"+ 
+        
+        "Muchas veces este tipo de trastornos de ánimo se detonan tras la pérdida de algún ser querido, o en situaciones difíciles a nivel emocional como la separación de la pareja o situaciones en donde transitamos por algún tipo de crisis a lo largo de nuestra vida.\n\n"+ 
+        
+        "Es de vital importancia, si te sientes deprimido, pedir ayuda, una cita con un médico o un profesional de salud mental tan pronto como sea posible. Para buscar un tratamiento que se adecue al proceso que se está transitando.","Texto3","Texto4","Texto5","Texto6","Texto7"]
     
 }

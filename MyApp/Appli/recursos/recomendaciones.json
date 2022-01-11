@@ -1,5 +1,42 @@
 {
     "id":[1,2,3,4,5,6,7],
-    "nombre": ["Texto1","Texto2","Texto3","Texto4","Texto5","Texto6","Texto7"]
+    "title":["¿Cómo se puede sentir la depresión?", "¿Qué es la ansiedad?"],
+    "cuerpo": ["La depresión puede producirse solamente una vez en la vida; pero esta se vive a través de varios episodios de depresión. Durante estos episodios, los síntomas se producen durante gran parte del día, casi todos los días y pueden consistir en:\n\n"+
+        "\tSentimientos de tristeza, ganas de llorar, vacío o desesperanza\n"+
+        "\tAlteraciones del sueño, como insomnio o dormir demasiado\n"+
+        "\tPérdida de interés o placer por la mayoría de las actividades habituales o todas, como las relaciones sexuales, los pasatiempos o los deportes\n"+
+        "\tCansancio y falta de energía, por lo que incluso las tareas pequeñas requieren un esfuerzo mayor\n"+
+        "\tArrebatos de enojo, irritabilidad o frustración, incluso por asuntos de poca importancia\n\n"+
+        "\tTambién es importante que sepas que no siempre las personas que se sienten deprimidas lo demuestran y muchas veces lo viven sólo para sí mismas.\n"+ 
+"Es importante que si te sientes así puedas comunicarlo a alguien de tu confianza o a un especialista de la salud mental. Ellos te acompañarán a encontrar una salida a tu estado.\n"+
+"\tTambién si sospechas que alguien cercano a ti que está viviendo depresión, puedes acercarte a esa persona, convérsale, preguntarle qué necesita. Visibilizar su estado y apoyar en el momento puede salvar muchas vidas que acaban en suicidio. ",
+"Es un estado psicológico y fisiológico caracterizado por componentes cognitivos, somáticos, emocionales y conductuales que se combinan para crear un sentimiento desagradable asociado típicamente con nerviosismo, anticipación de algo catastrófico, temor o preocupación. Este estado de ánimo generalizado puede ocurrir ante estímulos externos percibidos como amenazantes, pero ocurre con frecuencia sin un estímulo que lo provoque.\n\n"+
+"Las sensaciones más comunes de la ansiedad son:\n"+
+"\t\t• Sensación de ahogo\n"+
+"\t\t• Visión borrosa o nublada\n"+
+"\t\t• Mareos\n"+
+"\t\t• Sensación de dolor en la zona del pecho\n"+
+"\t\t• Malestar estomacal\n"+
+"\t\t• Ritmo cardiaco acelerado\n"+
+"\t\t• Sudoración\n"+
+"\t\t• Hormigueos y adormecimientos\n"+
+"\t\t• Sensación de frío o calor interno generalizado o en ciertas zonas\n\n"+
+"¿Por qué ocurre la ansiedad?\n\n"+
+"La ansiedad nos está comunicando algo: Nuestro cuerpo busca constantemente el equilibrio, cuando sufrimos estas crisis de ansiedad es consecuencia de una gestión emocional disfuncional.\n"+
+"Es importante la descarga emocional adecuada y oportuna, si nos expresó mi cuerpo guarda y llega a un punto que se satura y genera estas crisis.\n"+
+"Por esto, es importante darnos una pausa. Aprender nuevas formas de relacionarnos con nuestras emociones. Las emociones no son buenas ni malas, son simplemente una forma de expresión humana para relacionarnos con la vida.\n\n"+
+"¿Ahora entendemos porque tenemos estas sensaciones?\n\n"+
+"Nuestro cuerpo permanece en alerta, lo que repercute que en nuestro sistema nervioso y muscular se estresen tensión. Lo que busca el cuerpo a través de estas sensaciones es liberar esta tensión que lleva tiempo acumulada y liberar la adrenalina que está presente cuando permanecemos en alerta constante.\n"+
+"De algún modo esta es la razón porque tu cuerpo sientas estas sensaciones desagradables, y no siempre tienen que ver con padecer algún tipo de enfermedad grave.\n\n"+
+"Formas de liberar la tensión\n\n"+
+"El cuerpo ante situaciones de alerta se tensa y necesitamos realizar actividades que nos ayuden a salir de ese estado y nos lleven a la relajación. Te dejamos un listado de actividades que te pueden ayudar con eso:\n"+
+"• Cantar\n"+
+"• Estirarte\n"+
+"• Escribir lo que sientes\n"+
+"• Llorar\n"+
+"• Hablar\n"+
+"• Bailar\n"+
+"• Conversar con alguien sobre lo que sientes\n\n"+
+"Si estás sintiendo ansiedad constante y afectan en el desempeño de tus tareas diarias, es importante que consultes con un especialista para que pueda guiarte y encontrar un tratamiento adecuado","Texto3","Texto4","Texto5","Texto6","Texto7"]
     
 }

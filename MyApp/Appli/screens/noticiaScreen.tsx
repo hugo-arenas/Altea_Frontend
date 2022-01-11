@@ -6,7 +6,8 @@ import { StackScreenProps } from '@react-navigation/stack';
 
 interface RouterParams{
     id: number;
-    nombre: string
+    title: string;
+    cuerpo: string;
 }
 interface Props extends StackScreenProps<any,any>{};
 
@@ -14,12 +15,20 @@ export const noticiaScreen = ( {route}: Props) => {
 
 
     const params = route.params as RouterParams;
+    
     return (
         <GradientBackground>
             <ScrollView style={styles.scrollView}>
         <Text style={styles.text}>
           {
-              JSON.stringify(params.nombre, null, 3)
+              params.title
+          }
+        </Text>
+
+        <Text style={{marginHorizontal:20, marginTop:5, fontSize:15}}>
+          {
+            
+            params.cuerpo
           }
         </Text>
 
@@ -41,5 +50,6 @@ const styles = StyleSheet.create({
     },
     text: {
       fontSize: 22,
-    },
+      fontWeight: 'bold'
+    }
   });

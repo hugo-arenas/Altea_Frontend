@@ -20,7 +20,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia',  {
                     id: customDataNoticias.id[0],
-                    nombre:customDataNoticias.nombre[0]
+                    title:customDataNoticias.title[0],
+                    cuerpo:customDataNoticias.cuerpo[0]
                 })} >
                 <Image source={require('@recursos/images/noticiaUno.png')}
                     style={styleImage.imageNoticias}/>
@@ -28,7 +29,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia', {
                     id: customDataNoticias.id[1],
-                    nombre:customDataNoticias.nombre[1]
+                    title:customDataNoticias.title[1],
+                    cuerpo:customDataNoticias.cuerpo[1]
                 })}>
                 <Image source={require('@recursos/images/noticiaDos.png')}
                     style={styleImage.imageNoticias}/>
@@ -36,7 +38,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia', {
                     id: customDataNoticias.id[2],
-                    nombre:customDataNoticias.nombre[2]
+                    title:customDataNoticias.title[2],
+                    cuerpo:customDataNoticias.cuerpo[2]
                 })}>
                 <Image source={require('@recursos/images/noticiaTres.png')}
                     style={styleImage.imageNoticias}/>
@@ -44,7 +47,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia', {
                     id: customDataNoticias.id[3],
-                    nombre:customDataNoticias.nombre[3]
+                    title:customDataNoticias.title[3],
+                    cuerpo:customDataNoticias.cuerpo[3]
                 })}>
                 <Image source={require('@recursos/images/noticiaCuatro.png')}
                     style={styleImage.imageNoticias}/>
@@ -52,7 +56,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia', {
                     id: customDataNoticias.id[4],
-                    nombre:customDataNoticias.nombre[4]
+                    title:customDataNoticias.title[4],
+                    cuerpo:customDataNoticias.cuerpo[4]
                 })}>
                 <Image source={require('@recursos/images/noticiaCinco.png')}
                     style={styleImage.imageNoticias}/>
@@ -60,7 +65,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia', {
                     id: customDataNoticias.id[5],
-                    nombre:customDataNoticias.nombre[5]
+                    title:customDataNoticias.title[5],
+                    cuerpo:customDataNoticias.cuerpo[5]
                 })}>
                 <Image source={require('@recursos/images/noticiaSeis.png')}
                     style={styleImage.imageNoticias}/>
@@ -68,7 +74,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('Noticia', {
                     id: customDataNoticias.id[6],
-                    nombre:customDataNoticias.nombre[6]
+                    title:customDataNoticias.title[6],
+                    cuerpo:customDataNoticias.cuerpo[6]
                 })}>
                 <Image source={require('@recursos/images/noticiaSiete.png')}
                     style={styleImage.imageNoticias}/>
@@ -82,23 +89,26 @@ const principalScreen = ({navigation}: Props) => {
             <ScrollView contentContainerStyle={styles.contentContainer} horizontal={true}>
             <TouchableOpacity onPress={ () => navigation.navigate('RecomendacionScreen',  {
                     id: customDataRecomendaciones.id[0],
-                    nombre:customDataRecomendaciones.nombre[0]
+                    title:customDataRecomendaciones.title[0],
+                    cuerpo: customDataRecomendaciones.cuerpo[0]
                 })}>
-                <Image source={require('@recursos/images/noticiaUno.png')}
+                <Image source={require('@recursos/images/recomendacionUno.png')}
                     style={styleImage.imageRecomendaciones}/>
                 </TouchableOpacity>
               
                 <TouchableOpacity onPress={ () => navigation.navigate('RecomendacionScreen',  {
                     id: customDataRecomendaciones.id[1],
-                    nombre:customDataRecomendaciones.nombre[1]
+                    title:customDataRecomendaciones.title[1],
+                    cuerpo: customDataRecomendaciones.cuerpo[1]
                 })}>
-                <Image source={require('@recursos/images/noticiaDos.png')}
+                <Image source={require('@recursos/images/recomendacionDos.png')}
                     style={styleImage.imageRecomendaciones}/>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={ () => navigation.navigate('RecomendacionScreen',  {
                     id: customDataRecomendaciones.id[2],
-                    nombre:customDataRecomendaciones.nombre[2]
+                    title:customDataRecomendaciones.title[2],
+                    cuerpo: customDataRecomendaciones.cuerpo[2]
                 })}>
                 <Image source={require('@recursos/images/noticiaTres.png')}
                     style={styleImage.imageRecomendaciones}/>
@@ -106,7 +116,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('RecomendacionScreen',  {
                     id: customDataRecomendaciones.id[3],
-                    nombre:customDataRecomendaciones.nombre[3]
+                    title:customDataRecomendaciones.title[3],
+                    cuerpo: customDataRecomendaciones.cuerpo[3]
                 })}>
                 <Image source={require('@recursos/images/noticiaCuatro.png')}
                     style={styleImage.imageRecomendaciones}/>
@@ -114,7 +125,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('RecomendacionScreen',  {
                     id: customDataRecomendaciones.id[4],
-                    nombre:customDataRecomendaciones.nombre[4]
+                    title:customDataRecomendaciones.title[4],
+                    cuerpo: customDataRecomendaciones.cuerpo[4]
                 })}>
                 <Image source={require('@recursos/images/noticiaCinco.png')}
                     style={styleImage.imageRecomendaciones}/>
@@ -122,7 +134,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('RecomendacionScreen',  {
                     id: customDataRecomendaciones.id[5],
-                    nombre:customDataRecomendaciones.nombre[5]
+                    title:customDataRecomendaciones.title[5],
+                    cuerpo: customDataRecomendaciones.cuerpo[5]
                 })}>
                 <Image source={require('@recursos/images/noticiaSeis.png')}
                     style={styleImage.imageRecomendaciones}/>
@@ -130,7 +143,8 @@ const principalScreen = ({navigation}: Props) => {
 
                 <TouchableOpacity onPress={ () => navigation.navigate('RecomendacionScreen',  {
                     id: customDataRecomendaciones.id[6],
-                    nombre:customDataRecomendaciones.nombre[6]
+                    title:customDataRecomendaciones.title[6],
+                    cuerpo: customDataRecomendaciones.cuerpo[6]
                 })}>
                 <Image source={require('@recursos/images/noticiaSiete.png')}
                     style={styleImage.imageRecomendaciones}/>
